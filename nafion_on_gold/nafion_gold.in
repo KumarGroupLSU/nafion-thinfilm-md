@@ -1,0 +1,54 @@
+if "$(extract_setting(world_size) % 2) == 0" then "processors * * 2"
+
+boundary p p f
+# ----------------- Init Section -----------------
+
+include "nafion_gold.in.init"
+
+
+# ----------------- Atom Definition Section -----------------
+
+read_data "nafion_gold.data"
+
+# ----------------- Settings Section -----------------
+
+include "nafion_gold.in.settings"
+
+neighbor        3.0 bin
+neigh_modify delay 0 every 1 check yes
+kspace_modify slab ew2d
+
+group water type 8 9
+group electrode type 10
+group electrolyte type 1 2 3 4 5 6 7 8 9
+
+variable       q atom q
+compute        qelectrode electrode reduce sum v_q
+compute        ctemp electrolyte temp
+
+velocity       electrode set 0.0 0.0 0.0
+fix            2 electrode setforce 0.0 0.0 0.0
+
+fix 1 water shake 0.0001 20 0 b 10 a 21
+fix fxnvt electrolyte nvt temp 300.0 300.0 $(100.0*dt)
+fix conp electrode electrode/conp 0 1.805 symm on
+
+dump 1 all custom 500 nafion_gold.lammpstrj id mol type q x y z
+dump 2 all custom 500 nafion_gold_unwrapped.lammpstrj id mol type q xu yu zu
+dump_modify 1 sort 1
+dump_modify 2 sort 2
+
+thermo         500
+thermo_style   custom step temp press vol density vol c_ctemp epair etotal xlo xhi ylo yhi zlo zhi c_qelectrode 
+
+restart 200000 nafion_gold.restart
+
+timestep 1.0
+
+# ----------------- Run Section -----------------
+#20 ns
+run 20000000
+
+write_data nafion_gold_nvt.data
+write_restart nafion_gold_nvt.restart
+

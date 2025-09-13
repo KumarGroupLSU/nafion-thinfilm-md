@@ -1,0 +1,56 @@
+pair_coeff 1  1 lj/cut/coul/long 0.0844 3.8837
+pair_coeff 2  2 lj/cut/coul/long 0.0951 3.8983
+pair_coeff 3  3 lj/cut/coul/long 0.0496 3.3953
+pair_coeff 4  4 lj/cut/coul/long 0.0957 3.4046
+pair_coeff 5  5 lj/cut/coul/long 0.3440 4.0300
+pair_coeff 6  6 lj/cut/coul/long 0.1848 3.5532
+pair_coeff 7  7 lj/cut/coul/long 0.0100 0.9000
+pair_coeff 8  8 lj/cut/coul/long 0.1553 3.5533
+pair_coeff 9  9 lj/cut/coul/long 0.0000 0.0000
+pair_coeff 10  10 lj/cut/coul/long 0.5040 4.0000
+bond_coeff 1  429.3204 1.4982
+bond_coeff 2  700.0000 1.5300
+bond_coeff 3  700.0000 1.5300
+bond_coeff 4  700.0000 1.4200
+bond_coeff 5  700.0000 1.8000
+bond_coeff 6  605.2595 1.3360
+bond_coeff 7  605.2595 1.3360
+bond_coeff 8  700.0000 1.4800
+bond_coeff 9  1085.9565 0.9820
+bond_coeff 10  600.0000 1.0000
+
+angle_coeff 1  106.2739 122.5536
+angle_coeff 2  106.2739 122.5536
+angle_coeff 3  106.2739 122.5536
+angle_coeff 4  106.2739 122.5536
+angle_coeff 5  106.2739 122.5536
+angle_coeff 6  106.2739 122.5536
+angle_coeff 7  100.3366 118.3191
+angle_coeff 8  100.3366 118.3191
+angle_coeff 9  100.3366 118.3191
+angle_coeff 10  100.3366 118.3191
+angle_coeff 11  108.2396 121.5020
+angle_coeff 12  108.2396 121.5020
+angle_coeff 13  100.0000 109.4710
+angle_coeff 14  100.0000 125.2300
+angle_coeff 15  100.0000 109.5700
+angle_coeff 16  100.0000 110.3000
+angle_coeff 17  100.0000 116.8100
+angle_coeff 18  350.0000 102.6500
+angle_coeff 19  350.0000 115.5000
+angle_coeff 20  79.0263 113.4000
+angle_coeff 21  75.0000 109.47
+
+
+# General rules:
+dihedral_coeff 1  1.0000 3 180 0.0
+dihedral_coeff 2  1.0000 3 180 0.0
+dihedral_coeff 3  1.0000 3 180 0.0
+dihedral_coeff 4  3.2171 3 0 0.0
+dihedral_coeff 5  4.1222 3 0 0.0
+dihedral_coeff 6  4.0424 3 180 0.0
+dihedral_coeff 7  1.0000  3 180 0.0
+dihedral_coeff 8  1.0000  3 180 0.0
+dihedral_coeff 9  1.0000  3 180 0.0
+dihedral_coeff 10  1.0000  3 180 0.0
+
